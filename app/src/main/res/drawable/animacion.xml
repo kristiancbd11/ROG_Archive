@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/frame1_t" android:duration="120"/>
+    <item android:drawable="@drawable/frame2_t" android:duration="120"/>
+    <item android:drawable="@drawable/frame3_t" android:duration="120"/>
+    <item android:drawable="@drawable/frame4_t" android:duration="120"/>
+    <!-- Agrega más fotogramas según sea necesario -->
+</animation-list>

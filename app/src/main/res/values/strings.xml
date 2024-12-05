@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">ROG_Archive</string>
+    <string name="textoBotonIni">Iniciar Sesión</string>
+    <string name="textoBotonReg">Registrarse</string>
+    <string name="desc_logo">Logo Ruinas de Gartea</string>
+    <string name="textoUsuario">Usuario</string>
+    <string name="textoContraseña">Contraseña</string>
+    <string name="textoConfContra">Confirmar contraseña</string>
+    <string name="textoLoginBotonConfirmar">Confirmar</string>
+    <string name="textoLoginBotonAtras">Atras</string>
+    <string name="textoNombreUser">Nombre usuario</string>
+    <string name="textoMenuRogBotonCrearPersonaje">Crear personaje</string>
+    <string name="textoMenuRogBotonArchivoPersonaje">Archivo de personajes</string>
+    <string name="textoMenuRogBotonUnirsePartida">Unirse a partida</string>
+    <string name="textoMenuRogBotonCrearPartida">Crear partida</string>
+    <string name="textoMenuRogLogout">Logout</string>
+    <string name="textoCrearPartidaBotonNueva">Nueva partida</string>
+    <string name="textoCrearPartidaBotonCargar">Cargar partida</string>
+    <string name="textoCrearPartidaBotonEliminar">Eliminar partida</string>
+    <string name="CrearPartida">Crear partida</string>
+    <string name="Atras">Atras</string>
+    <string name="CrearEvento">Crear evento</string>
+    <string name="CrearDesafio">Crear desafio</string>
+</resources>

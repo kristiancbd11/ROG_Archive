@@ -1,0 +1,3 @@
+Nombre Partida A_3
+Nombre Partida B_4
+Nombre Partida C_2
