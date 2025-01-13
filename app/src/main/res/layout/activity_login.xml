@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".LoginActivity">
+    tools:context=".inicio.LoginActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,7 +22,7 @@
         app:srcCompat="@drawable/logo" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/editTextPassword"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/fondo_fields"
@@ -49,7 +49,7 @@
         app:layout_constraintVertical_bias="0.629" />
 
     <EditText
-        android:id="@+id/editTextText"
+        android:id="@+id/editTextUsuario"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@color/fondo_fields"
@@ -100,16 +100,19 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.918" />
 
-    <Button
+    <ImageButton
         android:id="@+id/botonLoginContinuar"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
-        android:text="@string/textoLoginBotonConfirmar"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.79"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.917"
+        app:srcCompat="@drawable/boton_continuar_selector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

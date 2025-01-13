@@ -6,66 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".CrearPartidaActivity">
+    tools:context=".gestionpartidas.CreadorPartidaActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="320dp"
-        android:layout_height="178dp"
-        android:contentDescription="@string/desc_logo"
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="412dp"
+        android:layout_height="729dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195"
-        app:srcCompat="@drawable/logo" />
-
-    <Button
-        android:id="@+id/botonNuevaPartida"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="@string/textoCrearPartidaBotonNueva"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.55" />
-
-    <Button
-        android:id="@+id/botonCargarPartida"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="@string/textoCrearPartidaBotonCargar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.644" />
-
-    <Button
-        android:id="@+id/botonEliminarPartida"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:text="@string/textoCrearPartidaBotonEliminar"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.737" />
-
-    <ImageView
-        android:id="@+id/imageViewAtras"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/desc_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:srcCompat="@drawable/atras" />
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

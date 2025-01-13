@@ -1,15 +1,17 @@
-package com.example.rog_archive;
+package com.example.rog_archive.inicio;
 
 import android.content.Intent;
 import android.graphics.drawable.AnimationDrawable;
 import android.media.MediaPlayer;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.rog_archive.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,62 +38,17 @@ public class MainActivity extends AppCompatActivity {
         AnimationDrawable animation = (AnimationDrawable) imageView.getBackground();
         animation.start();
 
-        // Botón Login
-        ImageView loginButton = findViewById(R.id.botonLogin);
-        loginButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        loginButton.setImageResource(R.drawable.boton_ini_ses_press);
-                        return true;
-                    case MotionEvent.ACTION_UP:
-                    case MotionEvent.ACTION_CANCEL:
-                        loginButton.setImageResource(R.drawable.boton_ini_ses);
-                        view.performClick();
-                        if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                            Intent intent = new Intent(MainActivity.this, LoginActivity.class);
-                            startActivity(intent);
-                        }
-                        return true;
-                }
-                return false;
-            }
-        });
-
+        // Botón Login corregido
+        ImageButton loginButton = findViewById(R.id.botonLogin);
         loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
 
-        // Botón Registro
-        ImageView registerButton = findViewById(R.id.botonRegistro);
-        registerButton.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                switch (motionEvent.getAction()) {
-                    case MotionEvent.ACTION_DOWN:
-                        registerButton.setImageResource(R.drawable.boton_reg_press);
-                        return true;
-                    case MotionEvent.ACTION_UP:
-                    case MotionEvent.ACTION_CANCEL:
-                        registerButton.setImageResource(R.drawable.boton_reg);
-                        view.performClick();
-                        if (motionEvent.getAction() == MotionEvent.ACTION_UP) {
-                            Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
-                            startActivity(intent);
-                        }
-                        return true;
-                }
-                return false;
-            }
-        });
-
+        ImageButton registerButton = findViewById(R.id.botonRegister);
         registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
                 startActivity(intent);

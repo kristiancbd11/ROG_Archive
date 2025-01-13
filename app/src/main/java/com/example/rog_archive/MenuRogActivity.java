@@ -7,9 +7,11 @@ import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
+import com.example.rog_archive.gestionpartidas.CreadorPartidaActivity;
+import com.example.rog_archive.gestionpersonajes.ArchivoPersonajesActivity;
+import com.example.rog_archive.gestionpersonajes.CreadorPersonajesActivity;
+import com.example.rog_archive.inicio.MainActivity;
 
 public class MenuRogActivity extends AppCompatActivity {
 
@@ -19,11 +21,20 @@ public class MenuRogActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_menu_rog);
 
+        Button creadorButton = findViewById(R.id.botonCrearPersonaje);
+        creadorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MenuRogActivity.this, CreadorPersonajesActivity.class);
+                startActivity(intent);
+            }
+        });
+
         Button archivoButton = findViewById(R.id.botonArchivoPersonajes);
         archivoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuRogActivity.this, ArchivoPersonajes.class);
+                Intent intent = new Intent(MenuRogActivity.this, ArchivoPersonajesActivity.class);
                 startActivity(intent);
             }
         });
@@ -41,7 +52,7 @@ public class MenuRogActivity extends AppCompatActivity {
         crearPartida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MenuRogActivity.this, CrearPartidaActivity.class);
+                Intent intent = new Intent(MenuRogActivity.this, CreadorPartidaActivity.class);
                 startActivity(intent);
             }
 

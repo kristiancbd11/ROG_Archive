@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".MainActivity">
+    tools:context=".inicio.MainActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -22,28 +22,6 @@
         app:srcCompat="@drawable/logo" />
 
     <ImageView
-        android:id="@+id/botonLogin"
-        android:layout_width="169dp"
-        android:layout_height="52dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
-        app:srcCompat="@drawable/boton_ini_ses" />
-
-    <ImageView
-        android:id="@+id/botonRegistro"
-        android:layout_width="169dp"
-        android:layout_height="52dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.546"
-        app:srcCompat="@drawable/boton_reg" />
-
-    <ImageView
         android:id="@+id/hoguera"
         android:layout_width="244dp"
         android:layout_height="239dp"
@@ -54,6 +32,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.825" />
+
+    <ImageButton
+        android:id="@+id/botonLogin"
+        android:layout_width="169dp"
+        android:layout_height="52dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.452"
+        app:srcCompat="@drawable/boton_ini_selector" />
+
+    <ImageButton
+        android:id="@+id/botonRegister"
+        android:layout_width="169dp"
+        android:layout_height="52dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.544"
+        app:srcCompat="@drawable/boton_reg_selector" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

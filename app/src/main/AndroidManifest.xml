@@ -13,6 +13,16 @@
         android:theme="@style/Theme.ROG_Archive"
         tools:targetApi="31">
         <activity
+            android:name=".gestionpersonajes.CreadorPersonajesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gestionpersonajes.ArchivoPersonajesActivity"
+            android:exported="false" />
+        <activity
+            android:name=".gestionpartidas.CreadorPartidaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive" />
+        <activity
             android:name=".ExploracionActivity"
             android:exported="false" />
         <activity
@@ -55,16 +65,16 @@
             android:name=".ArchivoPersonajes"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".inicio.RegisterActivity"
             android:exported="false" />
         <activity
             android:name=".MenuRogActivity"
             android:exported="false" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".inicio.LoginActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".inicio.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

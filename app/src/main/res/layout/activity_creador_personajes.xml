@@ -6,79 +6,81 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".inicio.MainActivity">
+    tools:context=".gestionpersonajes.CreadorPersonajesActivity">
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="320dp"
-        android:layout_height="178dp"
-        android:contentDescription="@string/desc_logo"
+    <EditText
+        android:id="@+id/editTextNombrePj"
+        android:layout_width="322dp"
+        android:layout_height="21dp"
+        android:background="@color/fondo_fields"
+        android:ems="10"
+        android:hint="Nombre del personaje"
+        android:inputType="text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195"
-        app:srcCompat="@drawable/logo" />
+        app:layout_constraintVertical_bias="0.228" />
+
+    <Spinner
+        android:id="@+id/spinnerRazas"
+        android:layout_width="322dp"
+        android:layout_height="21dp"
+        android:background="@color/fondo_fields"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.635" />
+
+    <Spinner
+        android:id="@+id/spinnerClases"
+        android:layout_width="322dp"
+        android:layout_height="21dp"
+        android:background="@color/fondo_fields"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.695" />
 
     <Button
-        android:id="@+id/botonCrearPersonaje"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogBotonCrearPersonaje"
+        android:id="@+id/buttonCrear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintVertical_bias="0.825" />
 
-    <Button
-        android:id="@+id/botonCrearPartida"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogBotonCrearPartida"
+    <ImageView
+        android:id="@+id/imageViewAtras"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/desc_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.904"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
+        app:layout_constraintVertical_bias="0.951"
+        app:srcCompat="@drawable/atras" />
 
-    <Button
-        android:id="@+id/botonLogout"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogLogout"
+    <ImageView
+        android:id="@+id/imageViewSeleccionarImagen"
+        android:layout_width="171dp"
+        android:layout_height="228dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
-
-    <Button
-        android:id="@+id/botonUnirsePartida"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogBotonUnirsePartida"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.769" />
-
-    <Button
-        android:id="@+id/botonArchivoPersonajes"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogBotonArchivoPersonaje"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
+        app:layout_constraintVertical_bias="0.403"
+        app:srcCompat="@drawable/persona_2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
