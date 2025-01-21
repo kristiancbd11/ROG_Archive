@@ -6,6 +6,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -22,8 +23,8 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         //Declaración de los elementos de la vista
-        Button continuarButton = findViewById(R.id.botonRegConfirmar);
-        Button botonAtras = findViewById(R.id.botonRegAtras);
+        ImageButton continuarButton = findViewById(R.id.botonRegContinuar);
+        ImageButton botonAtras = findViewById(R.id.botonRegAtras);
         EditText editTextUsuario = findViewById(R.id.editTextUsuario);
         EditText editTextPassword = findViewById(R.id.editTextPassword);
         EditText editTextPasswordConfirm = findViewById(R.id.editTextPasswordConfirm);

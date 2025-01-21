@@ -21,64 +21,79 @@
         app:layout_constraintVertical_bias="0.195"
         app:srcCompat="@drawable/logo" />
 
-    <Button
+    <ImageButton
         android:id="@+id/botonCrearPersonaje"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogBotonCrearPersonaje"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.485" />
+        app:layout_constraintVertical_bias="0.482"
+        app:srcCompat="@drawable/boton_crearpj_selector" />
 
-    <Button
+    <ImageButton
         android:id="@+id/botonCrearPartida"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogBotonCrearPartida"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.673" />
+        app:layout_constraintVertical_bias="0.669"
+        app:srcCompat="@drawable/boton_crearpartida_selector" />
 
-    <Button
+    <ImageButton
         android:id="@+id/botonLogout"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogLogout"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.865" />
+        app:layout_constraintVertical_bias="0.86"
+        app:srcCompat="@drawable/boton_cerrarsesion_selector" />
 
-    <Button
+    <ImageButton
         android:id="@+id/botonUnirsePartida"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogBotonUnirsePartida"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.769" />
+        app:layout_constraintVertical_bias="0.764"
+        app:srcCompat="@drawable/boton_unirsepartida_selector" />
 
-    <Button
+    <ImageButton
         android:id="@+id/botonArchivoPersonajes"
-        android:layout_width="150dp"
-        android:layout_height="55dp"
-        android:text="@string/textoMenuRogBotonArchivoPersonaje"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.579" />
+        app:layout_constraintVertical_bias="0.576"
+        app:srcCompat="@drawable/boton_archivopj_selector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

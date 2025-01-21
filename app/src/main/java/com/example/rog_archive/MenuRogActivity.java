@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +22,7 @@ public class MenuRogActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_menu_rog);
 
-        Button creadorButton = findViewById(R.id.botonCrearPersonaje);
+        ImageButton creadorButton = findViewById(R.id.botonCrearPersonaje);
         creadorButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -30,7 +31,7 @@ public class MenuRogActivity extends AppCompatActivity {
             }
         });
 
-        Button archivoButton = findViewById(R.id.botonArchivoPersonajes);
+        ImageButton archivoButton = findViewById(R.id.botonArchivoPersonajes);
         archivoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -39,7 +40,7 @@ public class MenuRogActivity extends AppCompatActivity {
             }
         });
 
-        Button logoutButton = findViewById(R.id.botonLogout);
+        ImageButton logoutButton = findViewById(R.id.botonLogout);
         logoutButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -48,7 +49,7 @@ public class MenuRogActivity extends AppCompatActivity {
             }
         });
 
-        Button crearPartida = findViewById(R.id.botonCrearPartida);
+        ImageButton crearPartida = findViewById(R.id.botonCrearPartida);
         crearPartida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -58,7 +59,7 @@ public class MenuRogActivity extends AppCompatActivity {
 
         });
 
-        Button unirsePartida = findViewById(R.id.botonUnirsePartida);
+        ImageButton unirsePartida = findViewById(R.id.botonUnirsePartida);
         unirsePartida.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

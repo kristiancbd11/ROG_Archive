@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -52,12 +53,12 @@ public class CargarPartidaFragment extends Fragment {
         }
 
         // Configurar el botón "Atrás"
-        ImageView atrasImage = view.findViewById(R.id.imageViewAtras);
+        ImageButton atrasImage = view.findViewById(R.id.botonAtras);
         atrasImage.setOnClickListener(v -> {
             requireActivity().onBackPressed(); // Simular el botón "Atrás" de la actividad
         });
 
-        Button botonNuevaPartida = view.findViewById(R.id.botonNuevaPartida);
+        ImageButton botonNuevaPartida = view.findViewById(R.id.botonNuevaPartida);
         botonNuevaPartida.setOnClickListener(v -> {
             // Crear una instancia del fragmento
             NuevaPartidaFragment nuevaPartidaFragment = new NuevaPartidaFragment();

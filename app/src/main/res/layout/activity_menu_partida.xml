@@ -58,4 +58,48 @@
         app:layout_constraintVertical_bias="0.246"
         app:srcCompat="@drawable/arbol" />
 
+    <TextView
+        android:id="@+id/textoCombate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dungeon_depths"
+        android:text="COMBATE"
+        android:textColor="#F2784B"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.185"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
+
+    <TextView
+        android:id="@+id/textoExploracion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dungeon_depths"
+        android:text="EXPLORACIÓN"
+        android:textColor="#F2784B"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.877"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.441" />
+
+    <TextView
+        android:id="@+id/textoDescanso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dungeon_depths"
+        android:text="DESCANSO"
+        android:textColor="#F2784B"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.866" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

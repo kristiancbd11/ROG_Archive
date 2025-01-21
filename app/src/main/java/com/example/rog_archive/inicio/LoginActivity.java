@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
         //Declaración de los elementos de la vista
         EditText editTextUsuario = findViewById(R.id.editTextUsuario);
         EditText editTextPassword = findViewById(R.id.editTextPassword);
-        Button atrasButton = findViewById(R.id.botonLoginAtras);
+        ImageButton atrasButton = findViewById(R.id.botonLoginAtras);
         ImageButton continuarButton = findViewById(R.id.botonLoginContinuar);
         TextView irRegistro = findViewById(R.id.textRegister);
 

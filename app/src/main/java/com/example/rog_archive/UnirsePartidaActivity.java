@@ -2,16 +2,27 @@ package com.example.rog_archive;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.rog_archive.gestiontcp.BuscadorTCP;
+
+import java.util.ArrayList;
+
 public class UnirsePartidaActivity extends AppCompatActivity {
+
+    private LinearLayout layoutBotones; // LinearLayout para los botones
+    private BuscadorTCP buscadorTCP; // Instancia de BuscadorTCP
+    private ArrayList<String> hostsDetectados = new ArrayList<>(); // Lista local para controlar hosts ya agregados
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,33 +30,55 @@ public class UnirsePartidaActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_unirse_partida);
 
+        // Configurar el botón "Atrás"
         ImageView atrasImage = findViewById(R.id.imageViewAtras);
-        atrasImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(UnirsePartidaActivity.this, MenuRogActivity.class);
+        atrasImage.setOnClickListener(view -> {
+            Intent intent = new Intent(UnirsePartidaActivity.this, MenuRogActivity.class);
+            startActivity(intent);
+        });
+
+        // Referencias a los elementos del diseño
+        layoutBotones = findViewById(R.id.layoutBotones);
+        buscadorTCP = new BuscadorTCP(); // Instanciar el BuscadorTCP
+
+        ImageView refreshButton = findViewById(R.id.imageRefresh);
+        refreshButton.setOnClickListener((view -> {
+            escuchar();
+        }));
+
+    }
+
+    private void escuchar() {
+        buscadorTCP.buscarHost();
+        hostsDetectados = buscadorTCP.getListaHosts();
+        crearBotonesDinamicos(hostsDetectados);
+    }
+
+    private void crearBotonesDinamicos(ArrayList<String> listaHosts) {
+        // Limpiar los botones existentes antes de añadir nuevos
+        layoutBotones.removeAllViews();
+
+        // Iterar sobre la lista de hosts
+        for (String host : listaHosts) {
+            Button botonHost = new Button(this);
+            botonHost.setText(host); // Asignar el texto del host al botón
+            botonHost.setLayoutParams(new LinearLayout.LayoutParams(
+                    LinearLayout.LayoutParams.MATCH_PARENT,
+                    LinearLayout.LayoutParams.WRAP_CONTENT
+            ));
+
+            // Asignar un listener al botón
+            botonHost.setOnClickListener(view -> {
+                Toast.makeText(UnirsePartidaActivity.this, "Host seleccionado: " + host, Toast.LENGTH_SHORT).show();
+
+                // Iniciar actividad con el host seleccionado
+                Intent intent = new Intent(UnirsePartidaActivity.this, SeleccionarPersonajeActivity.class);
+                intent.putExtra("host_seleccionado", host); // Pasar el host seleccionado a la siguiente actividad
                 startActivity(intent);
-            }
-        });
+            });
 
-        Button botonUnirse = findViewById(R.id.botonConfirmarUnirse);
-        final EditText editTextCodigoUnirse = findViewById(R.id.editTextCodigoUnirse); // Asegúrate de que este ID coincida con el ID real del EditText
-
-        botonUnirse.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String codigo = editTextCodigoUnirse.getText().toString().trim(); // Obtener el texto del EditText
-
-                // Comprobar si el EditText está vacío
-                if (codigo.isEmpty()) {
-                    // Si está vacío, mostrar un mensaje de error
-                    Toast.makeText(UnirsePartidaActivity.this, "No has ingresado ningún código", Toast.LENGTH_SHORT).show();
-                } else {
-                    // Si no está vacío, continuar con el flujo normal y abrir la siguiente actividad
-                    Intent intent = new Intent(UnirsePartidaActivity.this, SeleccionarPersonajeActivity.class);
-                    startActivity(intent);
-                }
-            }
-        });
+            // Añadir el botón al LinearLayout
+            layoutBotones.addView(botonHost);
+        }
     }
 }

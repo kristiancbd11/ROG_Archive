@@ -77,28 +77,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.684" />
 
-    <Button
+    <ImageButton
         android:id="@+id/botonRegAtras"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
-        android:text="@string/textoLoginBotonAtras"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.219"
+        app:layout_constraintHorizontal_bias="0.168"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.917"
+        app:srcCompat="@drawable/boton_atras_selector" />
 
-    <Button
-        android:id="@+id/botonRegConfirmar"
-        android:layout_width="115dp"
-        android:layout_height="wrap_content"
-        android:text="@string/textoLoginBotonConfirmar"
+    <ImageButton
+        android:id="@+id/botonRegContinuar"
+        android:layout_width="144dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.79"
+        app:layout_constraintHorizontal_bias="0.827"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.918" />
+        app:layout_constraintVertical_bias="0.917"
+        app:srcCompat="@drawable/boton_continuar_selector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

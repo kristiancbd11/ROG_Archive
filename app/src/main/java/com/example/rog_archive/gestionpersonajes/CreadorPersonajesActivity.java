@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Spinner;
 
@@ -47,7 +48,7 @@ public class CreadorPersonajesActivity extends AppCompatActivity {
         spinnerClases.setAdapter(adapter);
 
         // Configuración del botón "Crear"
-        Button buttonCrear = findViewById(R.id.buttonCrear);
+        ImageButton buttonCrear = findViewById(R.id.buttonCrear);
         buttonCrear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

@@ -8,34 +8,40 @@
     android:background="@color/fondo"
     tools:context=".UnirsePartidaActivity">
 
-    <EditText
-        android:id="@+id/editTextCodigoUnirse"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:hint="Ingrese el código de la sesión"
-        android:inputType="text"
-        android:maxLength="30"
-        android:background="@color/fondo_fields"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <!-- ScrollView para contener los botones dinámicos -->
+    <ScrollView
+        android:id="@+id/scrollViewBotones"
+        android:layout_width="328dp"
+        android:layout_height="530dp"
+        android:layout_marginHorizontal="16dp"
+        android:background="@drawable/marco"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toTopOf="@+id/botonConfirmarUnirse"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintTop_toTopOf="parent">
 
+        <!-- LinearLayout dentro del ScrollView -->
+        <LinearLayout
+            android:id="@+id/layoutBotones"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" />
+    </ScrollView>
+
+    <!-- Botón para confirmar -->
     <Button
         android:id="@+id/botonConfirmarUnirse"
         android:layout_width="184dp"
         android:layout_height="52dp"
         android:layout_marginHorizontal="16dp"
         android:text="@string/textoMenuRogBotonUnirsePartida"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewAtras"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
 
+    <!-- Icono para volver atrás -->
     <ImageView
         android:id="@+id/imageViewAtras"
         android:layout_width="45dp"
@@ -48,5 +54,18 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.951"
         app:srcCompat="@drawable/atras" />
+
+    <ImageView
+        android:id="@+id/imageRefresh"
+        android:layout_width="45dp"
+        android:layout_height="48dp"
+        android:contentDescription="@string/desc_logo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.098"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.951"
+        app:srcCompat="@drawable/refresh" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

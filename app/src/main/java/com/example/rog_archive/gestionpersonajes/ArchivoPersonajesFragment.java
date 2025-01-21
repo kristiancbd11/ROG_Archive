@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
@@ -39,13 +40,13 @@ public class ArchivoPersonajesFragment extends Fragment {
         atrasImage.setOnClickListener(view -> getActivity().onBackPressed());
 
         // Mostrar aviso "Personaje subido con éxito"
-        ImageView flechaSubida = rootView.findViewById(R.id.imageViewFlechaSubida);
+        ImageButton flechaSubida = rootView.findViewById(R.id.botonSubir);
         flechaSubida.setOnClickListener(view ->
                 Toast.makeText(getContext(), "Personaje subido con éxito", Toast.LENGTH_SHORT).show()
         );
 
         // Mostrar aviso "Personajes descargados"
-        Button botonDescarga = rootView.findViewById(R.id.botonDescarga);
+        ImageButton botonDescarga = rootView.findViewById(R.id.botonDescarga);
         botonDescarga.setOnClickListener(view ->
                 Toast.makeText(getContext(), "Personajes descargados", Toast.LENGTH_SHORT).show()
         );
