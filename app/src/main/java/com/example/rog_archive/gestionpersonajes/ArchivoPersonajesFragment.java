@@ -1,21 +1,24 @@
 package com.example.rog_archive.gestionpersonajes;
 
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
 import android.widget.Toast;
 
+import androidx.core.content.res.ResourcesCompat;
 import androidx.fragment.app.Fragment;
 
 import com.example.rog_archive.R;
 import com.example.rog_archive.clases.Personaje;
-import com.example.rog_archive.gestionficheros.GestorFicheros;
+import com.example.rog_archive.gestordb.DBHandler;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 
@@ -24,8 +27,12 @@ public class ArchivoPersonajesFragment extends Fragment {
     private LinearLayout linearLayoutPersonajes;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+
+        //Declaración para el uso de la base de datos
+        DBHandler dbHandler = new DBHandler(getContext());
+        dbHandler.open();
+
         // Inflamos el layout del fragmento
         View rootView = inflater.inflate(R.layout.fragment_archivo_personajes, container, false);
 
@@ -33,23 +40,7 @@ public class ArchivoPersonajesFragment extends Fragment {
         linearLayoutPersonajes = rootView.findViewById(R.id.linear_layout_personajes);
 
         // Llamar a cargar personajes
-        cargarYMostrarPersonajes(rootView);
-
-        // Botón para regresar al menú anterior (si es necesario)
-        ImageView atrasImage = rootView.findViewById(R.id.imageViewAtras);
-        atrasImage.setOnClickListener(view -> getActivity().onBackPressed());
-
-        // Mostrar aviso "Personaje subido con éxito"
-        ImageButton flechaSubida = rootView.findViewById(R.id.botonSubir);
-        flechaSubida.setOnClickListener(view ->
-                Toast.makeText(getContext(), "Personaje subido con éxito", Toast.LENGTH_SHORT).show()
-        );
-
-        // Mostrar aviso "Personajes descargados"
-        ImageButton botonDescarga = rootView.findViewById(R.id.botonDescarga);
-        botonDescarga.setOnClickListener(view ->
-                Toast.makeText(getContext(), "Personajes descargados", Toast.LENGTH_SHORT).show()
-        );
+        cargarYMostrarPersonajes(rootView, dbHandler);
 
         return rootView;
     }
@@ -57,79 +48,107 @@ public class ArchivoPersonajesFragment extends Fragment {
     /**
      * Carga los personajes desde el gestor de ficheros y los muestra como botones dinámicos.
      */
-    private void cargarYMostrarPersonajes(View rootView) {
-        GestorFicheros gestorFicheros = new GestorFicheros();
-        ArrayList<Personaje> personajes = gestorFicheros.cargarPersonajes(getContext());
+    private void cargarYMostrarPersonajes(View rootView, DBHandler dbHandler) {
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
 
-        if (personajes.isEmpty()) {
-            Toast.makeText(getContext(), "No hay personajes para mostrar", Toast.LENGTH_SHORT).show();
-            return;
-        }
+        if(user != null) {
+            String usuarioUid = user.getUid();
+            ArrayList<Personaje> personajes = dbHandler.obtenerPersonajesPorUsuario(usuarioUid);
 
-        for (Personaje personaje : personajes) {
-            // Crear un LinearLayout horizontal para cada personaje
-            LinearLayout layoutHorizontal = new LinearLayout(getContext());
-            layoutHorizontal.setOrientation(LinearLayout.HORIZONTAL);
-            layoutHorizontal.setPadding(8, 8, 8, 8);
+            if (personajes.isEmpty()) {
+                Toast.makeText(getContext(), "No hay personajes para mostrar", Toast.LENGTH_SHORT).show();
+                return;
+            } else {
+                for (Personaje personaje : personajes) {
+                    // Crear un LinearLayout horizontal para cada personaje
+                    LinearLayout layoutHorizontal = new LinearLayout(getContext());
+                    layoutHorizontal.setOrientation(LinearLayout.HORIZONTAL);
+                    layoutHorizontal.setPadding(8, 8, 8, 8);
 
-            // Crear el botón del personaje
-            Button botonPersonaje = new Button(getContext());
-            String texto = personaje.getNombre() + " - " + personaje.getClase() + " | Nv " + personaje.getNivel();
-            botonPersonaje.setText(texto);
+                    // Crear el botón del personaje
+                    Button botonPersonaje = new Button(getContext());
+                    String texto = personaje.getNombre() + " - " + personaje.getClase() + " | Nv " + personaje.getNivel();
+                    botonPersonaje.setText(texto);
 
-            // Configurar LayoutParams para que el botón ocupe todo el ancho del layout
-            LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(
-                    0, // El ancho será calculado proporcionalmente
-                    LinearLayout.LayoutParams.WRAP_CONTENT, // Altura ajustada al contenido
-                    1.0f // Peso para distribuir el espacio
-            );
-            botonPersonaje.setLayoutParams(buttonParams);
+                    // Aplicar estilos
+                    botonPersonaje.setTextColor(0xFFFFFFFF); // Texto blanco
+                    botonPersonaje.setTextSize(8); // Tamaño de texto 8sp
 
-            botonPersonaje.setOnClickListener(v -> {
-                // Crear el PopupMenu
-                PopupMenu popupMenu = new PopupMenu(getContext(), v);
-                // Inflar el menú con opciones
-                popupMenu.getMenu().add("Ver");
-                popupMenu.getMenu().add("Eliminar");
-
-                // Configurar el listener para manejar las selecciones del menú
-                popupMenu.setOnMenuItemClickListener(item -> {
-                    String title = item.getTitle().toString();
-                    switch (title) {
-                        case "Ver":
-                            // Acción para "Ver"
-                            VistaPersonajeFragment fragment = VistaPersonajeFragment.newInstance(personaje);
-
-                            // Reemplazamos el fragmento de la actividad
-                            getActivity().getSupportFragmentManager().beginTransaction()
-                                    .replace(R.id.fragment_container, fragment) // Reemplazamos el contenido actual con el fragmento
-                                    .addToBackStack(null) // Agregamos el fragmento a la pila de retroceso para poder volver
-                                    .commit();
-                            break;
-                        case "Eliminar":
-                            // Acción para "Eliminar"
-                            GestorFicheros gestorFicheros1 = new GestorFicheros();
-                            gestorFicheros1.eliminarPersonaje(getContext(), personaje.getNombre());
-
-                            // Recargar la lista de personajes después de eliminar
-                            linearLayoutPersonajes.removeAllViews();
-                            cargarYMostrarPersonajes(rootView);
-
-                            Toast.makeText(getContext(), "Personaje eliminado: " + personaje.getNombre(), Toast.LENGTH_SHORT).show();
-                            break;
+                    // Aplicar la fuente personalizada
+                    Typeface typeface = ResourcesCompat.getFont(getContext(), R.font.dungeon_depths);
+                    if (typeface != null) {
+                        botonPersonaje.setTypeface(typeface);
                     }
-                    return true;
-                });
 
-                // Mostrar el menú
-                popupMenu.show();
-            });
+                    // Aplicar el fondo personalizado con bordes redondeados y marco negro
+                    botonPersonaje.setBackgroundResource(R.drawable.rounded_button);
 
-            // Añadir los elementos al layout horizontal
-            layoutHorizontal.addView(botonPersonaje);
+                    // Configurar LayoutParams para que el botón ocupe todo el ancho del layout
+                    LinearLayout.LayoutParams buttonParams = new LinearLayout.LayoutParams(
+                            0, // Ancho proporcional
+                            LinearLayout.LayoutParams.WRAP_CONTENT, // Altura ajustada al contenido
+                            1.0f // Peso para distribuir el espacio
+                    );
+                    botonPersonaje.setLayoutParams(buttonParams);
 
-            // Añadir el layout horizontal al LinearLayout principal
-            linearLayoutPersonajes.addView(layoutHorizontal);
+                    botonPersonaje.setOnClickListener(v -> {
+                        // Crear el PopupMenu
+                        PopupMenu popupMenu = new PopupMenu(getContext(), v);
+                        popupMenu.getMenu().add("Ver");
+                        popupMenu.getMenu().add("Eliminar");
+
+                        // Configurar el listener para manejar las selecciones del menú
+                        popupMenu.setOnMenuItemClickListener(item -> {
+                            String title = item.getTitle().toString();
+                            switch (title) {
+                                case "Ver":
+                                    VistaPersonajeFragment fragment = VistaPersonajeFragment.newInstance(personaje);
+
+                                    // Reemplazar el fragmento en la actividad
+                                    getActivity().getSupportFragmentManager().beginTransaction()
+                                            .replace(R.id.fragment_container, fragment)
+                                            .addToBackStack(null)
+                                            .commit();
+                                    break;
+                                case "Eliminar":
+                                    // Abrir la base de datos
+                                    dbHandler.open();
+
+                                    // Eliminar el personaje usando el método de DBHandler
+                                    int filasAfectadas = dbHandler.eliminarPersonaje(usuarioUid, personaje.getNombre());
+
+                                    // Cerrar la base de datos
+                                    dbHandler.close();
+
+                                    if (filasAfectadas > 0) {
+                                        // Eliminar el botón del personaje en la UI
+                                        layoutHorizontal.post(() -> {
+                                            linearLayoutPersonajes.removeView(layoutHorizontal);
+                                            Toast.makeText(getContext(), "Personaje eliminado: " + personaje.getNombre(), Toast.LENGTH_SHORT).show();
+                                        });
+                                    } else {
+                                        Toast.makeText(getContext(), "Error al eliminar el personaje", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+
+
+                            }
+                            return true;
+                        });
+
+                        // Mostrar el menú
+                        popupMenu.show();
+                    });
+
+                    // Añadir los elementos al layout horizontal
+                    layoutHorizontal.addView(botonPersonaje);
+
+                    // Añadir el layout horizontal al LinearLayout principal
+                    linearLayoutPersonajes.addView(layoutHorizontal);
+                }
+            }
+
         }
+        dbHandler.close();
     }
 }

@@ -8,6 +8,8 @@
     android:background="@color/fondo"
     tools:context=".inicio.MainActivity">
 
+    <!-- activity_main.xml o cualquier otro layout -->
+
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="320dp"
@@ -18,7 +20,7 @@
         app:layout_constraintHorizontal_bias="0.494"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.195"
+        app:layout_constraintVertical_bias="0.099"
         app:srcCompat="@drawable/logo" />
 
     <ImageView
@@ -31,7 +33,7 @@
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.825" />
+        app:layout_constraintVertical_bias="0.863" />
 
     <ImageButton
         android:id="@+id/botonLogin"
@@ -44,7 +46,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.452"
+        app:layout_constraintVertical_bias="0.365"
         app:srcCompat="@drawable/boton_ini_selector" />
 
     <ImageButton
@@ -58,8 +60,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.544"
+        app:layout_constraintVertical_bias="0.456"
         app:srcCompat="@drawable/boton_reg_selector" />
+
+    <ImageButton
+        android:id="@+id/botonGoogle"
+        android:layout_width="59dp"
+        android:layout_height="55dp"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.568"
+        app:srcCompat="@drawable/boton_google" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

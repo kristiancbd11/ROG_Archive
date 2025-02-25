@@ -15,8 +15,9 @@
 
     <LinearLayout
         android:id="@+id/linear_layout_personajes"
-        android:layout_width="339dp"
-        android:layout_height="525dp"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:background="@drawable/marco"
         android:orientation="vertical"
         android:padding="16dp"
@@ -25,49 +26,6 @@
         app:layout_constraintHorizontal_bias="0.487"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.089" />
-
-    <ImageView
-        android:id="@+id/imageViewAtras"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/desc_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.896"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.929"
-        app:srcCompat="@drawable/atras" />
-
-    <ImageButton
-        android:id="@+id/botonDescarga"
-        android:layout_width="144dp"
-        android:layout_height="51dp"
-        android:adjustViewBounds="true"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.146"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842"
-        app:srcCompat="@drawable/boton_descargar_selector" />
-
-    <ImageButton
-        android:id="@+id/botonSubir"
-        android:layout_width="144dp"
-        android:layout_height="51dp"
-        android:adjustViewBounds="true"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.842"
-        app:srcCompat="@drawable/boton_subirpj_selector" />
+        app:layout_constraintVertical_bias="0.289" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

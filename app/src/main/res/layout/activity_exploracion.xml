@@ -6,60 +6,177 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".ExploracionActivity">
+    tools:context=".vistasdepartida.ExploracionActivity">
 
-    <ImageView
-        android:id="@+id/dado"
-        android:layout_width="239dp"
-        android:layout_height="206dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.3"
-        app:srcCompat="@drawable/dado" />
-
-    <Spinner
-        android:id="@+id/spinnerTipoDesafio"
-        android:layout_width="0dp"
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:background="#7f7aae"
-        android:popupBackground="#7f7aae"
+        android:layout_margin="10dp"
+        android:background="@drawable/estilo_azul"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.545" />
+        app:layout_constraintVertical_bias="0.057">
 
-    <TextView
-        android:id="@+id/numDado"
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dungeon_depths"
+            android:gravity="center"
+            android:inputType="text"
+            android:padding="4dp"
+            android:text="Seleccione un personaje"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+        <Spinner
+            android:id="@+id/spinnerPersonajes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/estilo_rosa"
+            android:padding="2dp"
+            android:popupBackground="@drawable/estilo_rosa"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/dungeon_depths"
+            android:gravity="center"
+            android:inputType="text"
+            android:padding="4dp"
+            android:text="dificultad del desafio"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <Spinner
+                android:id="@+id/spinnerTipoDesafio"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/estilo_rosa"
+                android:gravity="center"
+                android:padding="2dp"
+                android:popupBackground="@drawable/estilo_rosa"/>
+
+            <EditText
+                android:id="@+id/dificultad"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:background="@drawable/estilo_rosa"
+                android:fontFamily="@font/dungeon_depths"
+                android:gravity="center"
+                android:hint="0"
+                android:inputType="number"
+                android:maxLength="30"
+                android:padding="4dp"
+                android:textColor="#551F2D"
+                android:textSize="9sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/dungeon_depths"
+            android:gravity="center"
+            android:inputType="text"
+            android:padding="4dp"
+            android:text="¡LANZA UN DADO!"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+        <TextView
+            android:id="@+id/numDado"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:background="@drawable/dado"
+            android:gravity="center"
+            android:text="0"
+            android:textColor="@color/black"
+            android:textSize="35sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/layout4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textColor="@color/black"
-        android:textSize="35sp"
-        android:textStyle="bold"
+        android:layout_margin="10dp"
+        android:background="@drawable/estilo_azul"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.339" />
-s
-    <ImageView
-        android:id="@+id/imageViewAtras"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/desc_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:srcCompat="@drawable/atras" />
+        app:layout_constraintTop_toBottomOf="@id/layout1"
+        app:layout_constraintVertical_bias="0.119">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/dungeon_depths"
+            android:gravity="center"
+            android:padding="4dp"
+            android:text="Sumar recursos al campamento"
+            android:textColor="@color/white"
+            android:textSize="10dp" />
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/estilo_azul"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/cantidadRecursos"
+                android:layout_width="125dp"
+                android:layout_height="50dp"
+                android:layout_marginHorizontal="10dp"
+                android:background="@drawable/estilo_rosa"
+                android:fontFamily="@font/dungeon_depths"
+                android:gravity="center"
+                android:hint="Cantidad"
+                android:inputType="number"
+                android:maxLength="30"
+                android:padding="4dp"
+                android:textColor="#551F2D"
+                android:textSize="8sp"/>
+
+
+            <ImageButton
+                android:id="@+id/botonObtenerRecursos"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:adjustViewBounds="true"
+                android:background="@null"
+                android:scaleType="fitCenter"
+                app:srcCompat="@drawable/boton_recursos_selector" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,6 +1,21 @@
-<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+    <!-- Permiso para leer imágenes en Android 13+ -->
+    <uses-permission android:name="android.permission.READ_MEDIA_IMAGES" />
+
+    <!-- Permiso para escribir imágenes -->
+    <uses-permission android:name="android.permission.WRITE_MEDIA_IMAGES" />
+
+    <!-- Permisos para versiones anteriores a Android 13 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
+        android:maxSdkVersion="32" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28"/>
 
     <application
         android:allowBackup="true"
@@ -10,75 +25,59 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ROG_Archive"
         tools:targetApi="31">
+
+        <!-- Actividades -->
+        <activity
+            android:name=".vistasdepartida.RealizarAtaqueActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
             android:name=".gestionpersonajes.CreadorPersonajesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive" />
         <activity
             android:name=".gestionpersonajes.ArchivoPersonajesActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
             android:name=".gestionpartidas.CreadorPartidaActivity"
             android:exported="false"
             android:theme="@style/Theme.ROG_Archive" />
         <activity
-            android:name=".ExploracionActivity"
-            android:exported="false" />
+            android:name=".vistasdepartida.ExploracionActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
-            android:name=".TipoDescansoActivity"
-            android:exported="false" />
+            android:name=".vistasdepartida.TipoDescansoActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
-            android:name=".CombateInformacionActivity"
-            android:exported="false" />
+            android:name=".vistasdepartida.CombateActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
-            android:name=".CombateEquipacionActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CombateInvetarioActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CombateActivity"
-            android:exported="false" />
-        <activity
-            android:name=".SeleccionarPersonajeActivity"
-            android:exported="false" />
-        <activity
-            android:name=".UnirsePartidaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".NuevaPartidaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuMasterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MenuPartidaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CargarPartidaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".CrearPartidaActivity"
-            android:exported="false" />
-        <activity
-            android:name=".ArchivoPersonajes"
-            android:exported="false" />
+            android:name=".vistasdepartida.MenuPartidaActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
             android:name=".inicio.RegisterActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
-            android:name=".MenuRogActivity"
-            android:exported="false" />
+            android:name=".inicio.MenuRogActivity"
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
             android:name=".inicio.LoginActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.ROG_Archive"  />
         <activity
             android:name=".inicio.MainActivity"
-            android:exported="true" >
+            android:exported="true"
+            android:theme="@style/SplahTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

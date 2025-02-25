@@ -3,93 +3,83 @@ package com.example.rog_archive.inicio;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
-import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.rog_archive.MenuRogActivity;
 import com.example.rog_archive.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
+
+    // Variables para la autenticación de Firebase
+    private FirebaseAuth auth;
+    private EditText editTextCorreo, editTextContrasena;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        EdgeToEdge.enable(this);
         setContentView(R.layout.activity_login);
 
-        //Declaración de los elementos de la vista
-        EditText editTextUsuario = findViewById(R.id.editTextUsuario);
-        EditText editTextPassword = findViewById(R.id.editTextPassword);
+        // Inicializar FirebaseAuth
+        auth = FirebaseAuth.getInstance();
+
+        // Declaración de los elementos de la vista
         ImageButton atrasButton = findViewById(R.id.botonLoginAtras);
         ImageButton continuarButton = findViewById(R.id.botonLoginContinuar);
         TextView irRegistro = findViewById(R.id.textRegister);
+        editTextCorreo = findViewById(R.id.editTextCorreoElectronicoLogin);  // Suponiendo que tienes un campo para el correo
+        editTextContrasena = findViewById(R.id.editTextPassword);  // Suponiendo que tienes un campo para la contraseña
 
-        atrasButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
+        // Botón para regresar a la pantalla principal
+        atrasButton.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
         });
 
-        continuarButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String usuario = editTextUsuario.getText().toString().trim();
-                String password = editTextPassword.getText().toString();
+        // Botón para continuar con el login
+        continuarButton.setOnClickListener(view -> {
+            String correo = editTextCorreo.getText().toString().trim();
+            String contrasena = editTextContrasena.getText().toString().trim();
 
-                // Validación del usuario
-                if (TextUtils.isEmpty(usuario)) {
-                    Toast.makeText(LoginActivity.this, "Ingrese nombre de usuario.", Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (usuario.contains(" ")) {
-                    Toast.makeText(LoginActivity.this, "El nombre de usuario no debe contener espacios.", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-
-                // Validación de la contraseña
-                if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(LoginActivity.this, "Contraseña incorrecta.", Toast.LENGTH_SHORT).show();
-                    return;
-                } else if (!isPasswordValid(password)) {
-                    Toast.makeText(LoginActivity.this,
-                            "La contraseña debe corresponder con el siguiente formato:\n" +
-                                    "- Longitud entre 8 y 16 caracteres\n" +
-                                    "- Al menos un carácter numérico\n" +
-                                    "- Al menos una mayúscula\n" +
-                                    "- Al menos una minúscula",
-                            Toast.LENGTH_LONG).show();
-                    return;
-                }
-
-                // Si todo está bien, continuar
-                Intent intent = new Intent(LoginActivity.this, MenuRogActivity.class);
-                startActivity(intent);
+            // Validaciones de las credenciales
+            if (TextUtils.isEmpty(correo)) {
+                Toast.makeText(LoginActivity.this, "Por favor ingresa tu correo electrónico.", Toast.LENGTH_SHORT).show();
+                return;
             }
+
+            if (TextUtils.isEmpty(contrasena)) {
+                Toast.makeText(LoginActivity.this, "Por favor ingresa tu contraseña.", Toast.LENGTH_SHORT).show();
+                return;
+            }
+
+            // Intentar iniciar sesión con Firebase
+            auth.signInWithEmailAndPassword(correo, contrasena)
+                    .addOnCompleteListener(this, task -> {
+                        if (task.isSuccessful()) {
+                            // Si el inicio de sesión es exitoso, redirigir al menú principal
+                            FirebaseUser user = auth.getCurrentUser();
+                            if (user != null) {
+                                Toast.makeText(LoginActivity.this, "Bienvenido, " + user.getEmail(), Toast.LENGTH_SHORT).show();
+                            }
+                            Intent intent = new Intent(LoginActivity.this, MenuRogActivity.class);
+                            startActivity(intent);
+                            finish();
+                        } else {
+                            // Si el inicio de sesión falla, mostrar mensaje de error
+                            Toast.makeText(LoginActivity.this, "Error en el inicio de sesión: " + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
         });
 
-        irRegistro.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-            }
+        // Botón para ir a la pantalla de registro
+        irRegistro.setOnClickListener(view -> {
+            Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+            startActivity(intent);
         });
-    }
-
-    // Método de validación para la contraseña
-    private boolean isPasswordValid(String password) {
-        if (password.length() < 8 || password.length() > 16) return false;
-        if (!password.matches(".*\\d.*")) return false; // Contiene un número
-        if (!password.matches(".*[A-Z].*")) return false; // Contiene una mayúscula
-        if (!password.matches(".*[a-z].*")) return false; // Contiene una minúscula
-        return true;
     }
 }

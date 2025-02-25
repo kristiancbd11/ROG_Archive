@@ -6,83 +6,259 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".UnirsePartidaActivity">
-
-    <ImageView
-        android:id="@+id/imageViewAtras"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/desc_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:srcCompat="@drawable/atras" />
+    tools:context=".gestionpersonajes.ArchivoPersonajesActivity">
 
     <ImageView
         android:id="@+id/imagenPj"
         android:layout_width="128dp"
         android:layout_height="135dp"
+        android:background="@drawable/estilo_azul"
+        android:padding="1dp"
         android:src="@drawable/persona_2"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.095"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.139" />
-
-    <TextView
-        android:id="@+id/nombrePj"
-        android:layout_width="167dp"
-        android:layout_height="28dp"
-        android:text="TextView"
-        android:textColor="@color/fondo_fields"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.118" />
-
-    <TextView
-        android:id="@+id/razaPj"
-        android:layout_width="167dp"
-        android:layout_height="28dp"
-        android:text="TextView"
-        android:textColor="@color/fondo_fields"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.157" />
-
-    <TextView
-        android:id="@+id/clasePj"
-        android:layout_width="167dp"
-        android:layout_height="28dp"
-        android:text="TextView"
-        android:textColor="@color/fondo_fields"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.84"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.196" />
+        app:layout_constraintVertical_bias="0.135" />
 
     <TextView
         android:id="@+id/nivelPj"
         android:layout_width="128dp"
         android:layout_height="33dp"
-        android:text="TextView"
-        android:textColor="@color/fondo_fields"
+        android:background="@drawable/estilo_azul"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:text="Nivel: 1"
+        android:textColor="@color/black"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.187"
+        app:layout_constraintHorizontal_bias="0.095"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imagenPj"
+        app:layout_constraintVertical_bias="0.002" />
+
+    <TextView
+        android:id="@+id/nombrePj"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:background="@drawable/estilo_azul"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:padding="1dp"
+        android:text="Nombre del personaje"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/razaPj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toEndOf="@+id/imagenPj"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.976" />
+
+    <ProgressBar
+        android:id="@+id/barraSalud"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:progress="5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.027"
+        app:layout_constraintStart_toEndOf="@+id/valorSalud"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.257" />
+
+    <TextView
+        android:id="@+id/valorSalud"
+        android:layout_width="60dp"
+        android:layout_height="31dp"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:text="Salud"
+        android:textColor="@color/fondo_fields"
+        android:textSize="8sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.312" />
+        app:layout_constraintVertical_bias="0.254" />
 
+    <TextView
+        android:id="@+id/razaPj"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:background="@drawable/estilo_azul"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:padding="1dp"
+        android:text="Raza del personaje"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/clasePj"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toEndOf="@+id/imagenPj"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.991" />
+
+    <TextView
+        android:id="@+id/clasePj"
+        android:layout_width="200dp"
+        android:layout_height="28dp"
+        android:background="@drawable/estilo_azul"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:padding="1dp"
+        android:text="Clase del personaje"
+        android:textColor="@color/black"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/valorSalud"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.375"
+        app:layout_constraintStart_toEndOf="@+id/imagenPj"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.94" />
+
+    <LinearLayout
+        android:id="@+id/estadisticasLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.458">
+
+        <TextView
+            android:id="@+id/estadisticaM"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="M: 0"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:background="@drawable/estilo_azul"
+            android:fontFamily="@font/dungeon_depths"/>
+
+        <TextView
+            android:id="@+id/estadisticaR"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="R: 0"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:background="@drawable/estilo_azul"
+            android:fontFamily="@font/dungeon_depths" />
+
+        <TextView
+            android:id="@+id/estadisticaS"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="S: 0"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:background="@drawable/estilo_azul"
+            android:fontFamily="@font/dungeon_depths" />
+
+        <TextView
+            android:id="@+id/estadisticaH"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="H: 0"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:background="@drawable/estilo_azul"
+            android:fontFamily="@font/dungeon_depths" />
+
+        <TextView
+            android:id="@+id/estadisticaL"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="L: 0"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:background="@drawable/estilo_azul"
+            android:fontFamily="@font/dungeon_depths" />
+
+        <TextView
+            android:id="@+id/estadisticaCO"
+            android:padding="1dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="CO: 0"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            android:background="@drawable/estilo_azul"
+            android:fontFamily="@font/dungeon_depths" />
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollViewArmas"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/aniadirArma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/clasePj"
+        app:layout_constraintVertical_bias="0.912">
+
+        <LinearLayout
+            android:id="@+id/armas"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Las líneas de texto se añadirán dinámicamente aquí -->
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ImageButton
+        android:id="@+id/botonGenerarPDF"
+        android:layout_width="137dp"
+        android:layout_height="46dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.142"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842"
+        app:srcCompat="@drawable/boton_pdf_selector" />
+
+    <ImageButton
+        android:id="@+id/aniadirArma"
+        android:layout_width="137dp"
+        android:layout_height="46dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.839"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.842"
+        app:srcCompat="@drawable/boton_arma_selector" />
 </androidx.constraintlayout.widget.ConstraintLayout>

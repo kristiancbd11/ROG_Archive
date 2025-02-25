@@ -6,4 +6,8 @@
     </style>
 
     <style name="Theme.ROG_Archive" parent="Base.Theme.ROG_Archive" />
+
+    <style name="SplahTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splashscreen</item>
+    </style>
 </resources>

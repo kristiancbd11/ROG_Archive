@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:background="@color/fondo"
+    android:layout_height="match_parent"
+    tools:context=".gestionpartidas.NuevaPartidaFragment">
+
+    <!-- Campo de entrada de texto -->
+
+    <!-- Spinner para seleccionar número de jugadores -->
+
+    <!-- Botón "Continuar" -->
+
+    <!-- Botón "Atrás" -->
+
+
+    <EditText
+        android:id="@+id/NombreArma"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:gravity="center"
+        android:padding="4dp"
+        android:background="@drawable/estilo_rosa"
+        android:fontFamily="@font/dungeon_depths"
+        android:textColor="#551F2D"
+        android:textSize="9sp"
+        android:hint="Nombre del arma"
+        android:inputType="text"
+        android:maxLength="30"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.237" />
+
+    <EditText
+        android:id="@+id/alcance"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/estilo_rosa"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="30"
+        android:padding="2dp"
+        android:textColor="#551F2D"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308" />
+
+    <EditText
+        android:id="@+id/precision"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/estilo_rosa"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="30"
+        android:padding="2dp"
+        android:textColor="#551F2D"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ataques"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <EditText
+        android:id="@+id/fuerza"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/estilo_rosa"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="30"
+        android:padding="2dp"
+        android:textColor="#551F2D"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/precision"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <EditText
+        android:id="@+id/danio"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/estilo_rosa"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="30"
+        android:padding="2dp"
+        android:textColor="#551F2D"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/perforacion"
+        app:layout_constraintVertical_bias="0.075" />
+
+    <EditText
+        android:id="@+id/perforacion"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/estilo_rosa"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="30"
+        android:padding="2dp"
+        android:textColor="#551F2D"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fuerza"
+        app:layout_constraintVertical_bias="0.066" />
+
+    <EditText
+        android:id="@+id/ataques"
+        android:layout_width="66dp"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="32dp"
+        android:background="@drawable/estilo_rosa"
+        android:fontFamily="@font/dungeon_depths"
+        android:gravity="center"
+        android:inputType="number"
+        android:maxLength="30"
+        android:padding="2dp"
+        android:textColor="#551F2D"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.982"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/alcance"
+        app:layout_constraintVertical_bias="0.043" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/estilo_azul"
+        android:gravity="center"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="10sp"
+        android:paddingRight="4dp"
+        android:text="Alcance"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/alcance"
+        app:layout_constraintHorizontal_bias="0.675"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.308" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/estilo_azul"
+        android:gravity="center"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="10sp"
+        android:paddingRight="4dp"
+        android:text="Fuerza"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fuerza"
+        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7"
+        app:layout_constraintVertical_bias="0.056" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="416dp"
+        android:background="@drawable/estilo_azul"
+        android:gravity="center"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="10sp"
+        android:paddingRight="4dp"
+        android:text="Perforación"
+        app:layout_constraintEnd_toStartOf="@+id/perforacion"
+        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/estilo_azul"
+        android:gravity="center"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="10sp"
+        android:paddingRight="4dp"
+        android:text="Ataques"
+        app:layout_constraintEnd_toStartOf="@+id/ataques"
+        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/estilo_azul"
+        android:gravity="center"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="10sp"
+        android:paddingRight="4dp"
+        android:text="Daño"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/danio"
+        app:layout_constraintHorizontal_bias="0.648"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView9"
+        app:layout_constraintVertical_bias="0.082" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:background="@drawable/estilo_azul"
+        android:gravity="center"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="10sp"
+        android:paddingRight="4dp"
+        android:text="Precisión"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/precision"
+        app:layout_constraintHorizontal_bias="0.662"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        app:layout_constraintVertical_bias="0.054" />
+
+    <ImageButton
+        android:id="@+id/aniadirArmaButton"
+        android:layout_width="290dp"
+        android:layout_height="51dp"
+        android:adjustViewBounds="true"
+        android:background="@null"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.808"
+        app:srcCompat="@drawable/boton_guardararma_selector" />
+
+    <TextView
+        android:id="@+id/nombrePersonaje"
+        android:layout_width="267dp"
+        android:layout_height="41dp"
+        android:text="TextView"
+        android:gravity="center"
+        android:padding="2dp"
+        android:background="@drawable/estilo_rosa"
+        android:fontFamily="@font/dungeon_depths"
+        android:textColor="#551F2D"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/NombreArma"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.496" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

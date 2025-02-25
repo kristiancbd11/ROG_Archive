@@ -8,42 +8,60 @@
     android:layout_height="match_parent"
     tools:context=".gestionpartidas.NuevaPartidaFragment">
 
-    <!-- Campo de entrada de texto -->
+    <ScrollView
+        android:layout_width="294dp"
+        android:layout_height="392dp"
+        android:background="@drawable/marco_azul"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.498">
 
-    <!-- Spinner para seleccionar número de jugadores -->
-
-    <!-- Botón "Continuar" -->
-
-    <!-- Botón "Atrás" -->
+        <LinearLayout
+            android:id="@+id/linear_layout_recuadros2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp" />
+    </ScrollView>
 
     <EditText
         android:id="@+id/editTextNombrePartida"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginHorizontal="30dp"
+        android:padding="2dp"
+        android:background="@drawable/estilo_azul"
         android:hint="Nombre de la partida"
+        android:gravity="center"
         android:inputType="text"
         android:maxLength="30"
-        android:background="#7f7aae"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.402" />
+        app:layout_constraintVertical_bias="0.104" />
 
     <Spinner
         android:id="@+id/spinnerNumeroJugadores"
-        android:layout_width="0dp"
+        android:padding="2dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="32dp"
-        android:layout_marginTop="16dp"
-        android:background="#7f7aae"
-        android:popupBackground="#7f7aae"
+        android:layout_marginHorizontal="30dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/estilo_azul"
+        android:popupBackground="@drawable/estilo_azul"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.461" />
+        app:layout_constraintVertical_bias="0.157" />
 
     <Button
         android:id="@+id/botonCrearNuevaPartida"
@@ -51,24 +69,14 @@
         android:layout_height="52dp"
         android:layout_marginHorizontal="16dp"
         android:text="@string/CrearPartida"
+        android:background="@drawable/estilo_azul"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.642" />
-
-    <ImageView
-        android:id="@+id/imageViewAtras"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/desc_logo"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:srcCompat="@drawable/atras" />
+        app:layout_constraintVertical_bias="0.88" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

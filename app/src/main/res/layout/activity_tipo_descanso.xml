@@ -6,67 +6,253 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/fondo"
-    tools:context=".TipoDescansoActivity">
+    tools:context=".vistasdepartida.TipoDescansoActivity">
 
-    <ImageView
-        android:id="@+id/imageViewAtras"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/desc_logo"
+    <LinearLayout
+        android:id="@+id/layout1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@drawable/estilo_azul"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:srcCompat="@drawable/atras" />
+        app:layout_constraintVertical_bias="0.057">
+
+        <TextView
+            android:id="@+id/nombrePartidaDescanso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/estilo_azul_oscuro"
+            android:fontFamily="@font/dungeon_depths"
+            android:gravity="center"
+            android:padding="8dp"
+            android:textColor="@color/fondo_fields"
+            android:textSize="10sp" />
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/textRecursos"
+                android:layout_marginEnd="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dungeon_depths"
+                android:text="Recursos"
+                android:textColor="@color/fondo"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/textDescansos"
+                android:layout_marginStart="30dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/dungeon_depths"
+                android:text="Descansos"
+                android:textColor="@color/fondo"
+                android:textSize="10sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <LinearLayout
+                android:id="@+id/layout3"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:padding="4dp"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="start"
+                    app:srcCompat="@drawable/bolsa"
+                    android:background="@drawable/estilo_azul_oscuro"/>
+
+                <TextView
+                    android:id="@+id/recursosDisponibles"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_centerInParent="true"
+                    android:hint="Recursos"
+                    android:fontFamily="@font/dungeon_depths"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:textColor="@color/fondo"
+                    android:layout_gravity="start"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.254"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.533" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout4"
+                android:layout_width="150dp"
+                android:layout_gravity="end"
+                android:gravity="end"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="5dp">
+
+                <TextView
+                    android:id="@+id/descansosDisponibles"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:hint="Descansos"
+                    android:fontFamily="@font/dungeon_depths"
+                    android:gravity="center"
+                    android:padding="8dp"
+                    android:textColor="@color/fondo"
+                    android:layout_gravity="end"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.254"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.447" />
+
+                <ImageView
+                    android:id="@+id/imageView4"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="end"
+                    android:background="@drawable/estilo_azul_oscuro"
+                    app:srcCompat="@drawable/reloj" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
 
     <Button
         android:id="@+id/botonsDescansoLargo"
-        android:layout_width="196dp"
-        android:layout_height="58dp"
-        android:text="Descanso largo"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/rounded_button_lila"
+        app:layout_constraintBottom_toTopOf="@+id/hoguera"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.271"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.401" />
+        app:layout_constraintVertical_bias="0.899" />
 
     <Button
         android:id="@+id/botonsDescansoCorto"
-        android:layout_width="196dp"
-        android:layout_height="58dp"
-        android:text="Descanso corto"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:background="@drawable/rounded_button_lila"
+        app:layout_constraintBottom_toTopOf="@+id/hoguera"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/botonsDescansoLargo"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.512" />
+        app:layout_constraintVertical_bias="0.901" />
 
     <ImageView
         android:id="@+id/estrella1"
-        android:layout_width="49dp"
-        android:layout_height="50dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613"
-        app:srcCompat="@drawable/estrella" />
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/botonsDescansoCorto"
+        app:layout_constraintEnd_toEndOf="@+id/botonsDescansoCorto"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintStart_toStartOf="@+id/botonsDescansoCorto"
+        app:layout_constraintTop_toTopOf="@+id/botonsDescansoCorto"
+        app:layout_constraintVertical_bias="0.7"
+        app:srcCompat="@drawable/estrella"
+        android:translationZ="2dp"/>
 
     <ImageView
         android:id="@+id/estrella2"
-        android:layout_width="49dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintBottom_toBottomOf="@+id/botonsDescansoCorto"
+        app:layout_constraintEnd_toEndOf="@+id/botonsDescansoCorto"
+        app:layout_constraintHorizontal_bias="0.78"
+        app:layout_constraintStart_toStartOf="@+id/botonsDescansoCorto"
+        app:layout_constraintTop_toTopOf="@+id/botonsDescansoCorto"
+        app:layout_constraintVertical_bias="0.3"
+        app:srcCompat="@drawable/estrella"
+        android:translationZ="2dp"/>
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="50dp"
         android:layout_height="50dp"
+        android:translationZ="2dp"
+        app:layout_constraintBottom_toBottomOf="@+id/botonsDescansoLargo"
+        app:layout_constraintEnd_toEndOf="@+id/botonsDescansoLargo"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="@+id/botonsDescansoLargo"
+        app:layout_constraintTop_toTopOf="@+id/botonsDescansoLargo"
+        app:srcCompat="@drawable/luna" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dungeon_depths"
+        android:text="Descanso largo"
+        android:textColor="@color/fondo_fields"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/botonsDescansoLargo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.065"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layout1"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/dungeon_depths"
+        android:text="Descanso corto"
+        android:textColor="@color/fondo_fields"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toTopOf="@+id/botonsDescansoCorto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.777"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/layout1"
+        app:layout_constraintVertical_bias="0.727" />
+
+    <ImageView
+        android:id="@+id/hoguera"
+        android:layout_width="231dp"
+        android:layout_height="238dp"
+        android:contentDescription="@string/desc_logo"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.588"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.613"
-        app:srcCompat="@drawable/estrella" />
+        app:layout_constraintVertical_bias="0.807" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

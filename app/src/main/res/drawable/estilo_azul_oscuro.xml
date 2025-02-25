@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Fondo del EditText -->
+    <solid android:color="#222135"/>
+
+    <!-- Borde exterior -->
+    <stroke
+        android:color="#46456e"
+        android:width="2dp" />
+
+    <!-- Borde interior (más delgado) -->
+    <stroke
+        android:color="#373253"
+        android:width="2dp"
+        android:dashGap="2dp" />
+</shape>

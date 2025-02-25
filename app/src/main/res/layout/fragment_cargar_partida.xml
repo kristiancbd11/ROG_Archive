@@ -8,52 +8,43 @@
     android:background="@color/fondo"
     tools:context=".gestionpartidas.CargarPartidaFragment">
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Marco de partidas con dimensiones y posición ajustadas -->
     <ScrollView
-        android:layout_width="348dp"
-        android:layout_height="533dp"
+        android:layout_width="339dp"
+        android:layout_height="525dp"
         android:background="@drawable/marco_azul"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.161">
+        app:layout_constraintVertical_bias="0.100">
 
         <LinearLayout
             android:id="@+id/linear_layout_recuadros"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" />
+            android:orientation="vertical"
+            android:padding="16dp" />
     </ScrollView>
 
     <ImageButton
         android:id="@+id/botonNuevaPartida"
-        android:layout_width="144dp"
-        android:layout_height="51dp"
+        android:layout_width="180dp"
+        android:layout_height="65dp"
         android:adjustViewBounds="true"
         android:background="@null"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926"
+        app:layout_constraintVertical_bias="0.880"
         app:srcCompat="@drawable/boton_nuevapartida_selector" />
-
-    <ImageButton
-        android:id="@+id/botonAtras"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:adjustViewBounds="true"
-        android:background="@null"
-        android:scaleType="fitCenter"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.905"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.926"
-        app:srcCompat="@drawable/boton_atrasazul_selector" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

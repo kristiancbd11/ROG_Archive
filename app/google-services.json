@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "994788938994",
+    "project_id": "rogarchivedb",
+    "storage_bucket": "rogarchivedb.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:994788938994:android:ec3468a1f7e2030ae2ec6b",
+        "android_client_info": {
+          "package_name": "com.example.rog_archive"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "994788938994-7drapobp67l9b6fc4p04btn6fcf5mrab.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.rog_archive",
+            "certificate_hash": "2ec59e760dd2627c7df592659105bd16e76ea71e"
+          }
+        },
+        {
+          "client_id": "994788938994-b877h56q0rkd670nil4fap1rstnjfmsg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv32zT72TYWCXa2SwgkNIjug7HQGzFefs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "994788938994-b877h56q0rkd670nil4fap1rstnjfmsg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

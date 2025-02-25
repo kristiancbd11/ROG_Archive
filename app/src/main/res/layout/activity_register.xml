@@ -8,17 +8,154 @@
     android:background="@color/fondo"
     tools:context=".inicio.LoginActivity">
 
-    <ImageView
-        android:id="@+id/fieldRegister"
-        android:layout_width="358dp"
-        android:layout_height="316dp"
+    <LinearLayout
+        android:id="@+id/estadisticasLayout"
+        android:layout_width="325dp"
+        android:layout_height="300dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/fondo_registro"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.614"
-        app:srcCompat="@drawable/field_registro" />
+        app:layout_constraintVertical_bias="0.7">
+
+        <TextView
+            android:layout_marginTop="15dp"
+            android:id="@+id/textViewNombre"
+            android:layout_width="223dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/dungeon_depths"
+            android:text="Nombre de usuario"
+            android:textColor="#222034"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.324"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.431" />
+
+        <EditText
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/editTextUsuarioRegister"
+            android:layout_width="288dp"
+            android:layout_height="25dp"
+            android:background="@color/fondo"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/fondo_fields"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.463" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textViewCorreo"
+            android:layout_width="223dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/dungeon_depths"
+            android:text="Correo electrónico"
+            android:textColor="#222034"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.324"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.533" />
+
+        <EditText
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/editTextCorreoElectronicoRegister"
+            android:layout_width="288dp"
+            android:layout_height="25dp"
+            android:background="@color/fondo"
+            android:ems="10"
+            android:inputType="text"
+            android:textColor="@color/fondo_fields"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.563" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textViewPassword"
+            android:layout_width="223dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/dungeon_depths"
+            android:text="Contraseña"
+            android:textColor="#222034"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.324"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.631" />
+
+        <EditText
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/editTextPassword"
+            android:layout_width="288dp"
+            android:layout_height="25dp"
+            android:background="@color/fondo"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textColor="@color/fondo_fields"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.664" />
+
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/textViewPasswordR"
+            android:layout_width="223dp"
+            android:layout_height="17dp"
+            android:fontFamily="@font/dungeon_depths"
+            android:text="Confirmar contraseña"
+            android:textColor="#222034"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.324"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.735" />
+
+        <EditText
+            android:paddingBottom="1dp"
+            android:paddingLeft="5dp"
+            android:id="@+id/editTextPasswordConfirm"
+            android:layout_width="288dp"
+            android:layout_height="25dp"
+            android:background="@color/fondo"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:textColor="@color/fondo_fields"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.767" />
+
+    </LinearLayout>
 
     <ImageView
         android:id="@+id/imageView"
@@ -33,50 +170,6 @@
         app:layout_constraintVertical_bias="0.195"
         app:srcCompat="@drawable/logo" />
 
-    <EditText
-        android:id="@+id/editTextUsuario"
-        android:layout_width="288dp"
-        android:layout_height="25dp"
-        android:background="@null"
-        android:ems="10"
-        android:inputType="text"
-        android:textColor="@color/fondo_fields"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.478" />
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="288dp"
-        android:layout_height="25dp"
-        android:background="@null"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textColor="@color/fondo_fields"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.575" />
-
-    <EditText
-        android:id="@+id/editTextPasswordConfirm"
-        android:layout_width="288dp"
-        android:layout_height="25dp"
-        android:background="@null"
-        android:ems="10"
-        android:inputType="textPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.684" />
-
     <ImageButton
         android:id="@+id/botonRegAtras"
         android:layout_width="144dp"
@@ -85,8 +178,8 @@
         android:background="@null"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintEnd_toStartOf="@+id/botonRegContinuar"
+        app:layout_constraintHorizontal_bias="0.555"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.917"
@@ -101,7 +194,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.917"

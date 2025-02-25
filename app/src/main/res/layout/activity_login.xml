@@ -21,82 +21,90 @@
         app:layout_constraintVertical_bias="0.195"
         app:srcCompat="@drawable/logo" />
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="355dp"
-        android:layout_height="234dp"
+    <LinearLayout
+        android:id="@+id/estadisticasLayout"
+        android:layout_width="325dp"
+        android:layout_height="208dp"
+        android:layout_margin="30dp"
+        android:background="@drawable/plantilla_login"
+        android:orientation="vertical"
+        android:padding="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.523"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.627"
-        app:srcCompat="@drawable/plantilla_login" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.0">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="105dp"
-        android:layout_height="18dp"
-        android:fontFamily="@font/dungeon_depths"
-        android:text="@string/textoContraseña"
-        android:textColor="#222034"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.147"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.617" />
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="93dp"
+            android:layout_height="16dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/dungeon_depths"
+            android:text="Correo"
+            android:textColor="#222034"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.141"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.525" />
 
-    <EditText
-        android:id="@+id/editTextUsuario"
-        android:layout_width="319dp"
-        android:layout_height="20dp"
-        android:background="#222034"
-        android:ems="10"
-        android:inputType="text"
-        android:textSize="8sp"
-        android:fontFamily="@font/dungeon_depths"
-        android:textColor="@color/fondo_fields"
-        android:paddingLeft="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.566" />
+        <EditText
+            android:paddingBottom="1dp"
+            android:id="@+id/editTextCorreoElectronicoLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#222034"
+            android:ems="10"
+            android:inputType="text"
+            android:paddingLeft="8dp"
+            android:textColor="@color/fondo_fields"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.566" />
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="93dp"
-        android:layout_height="16dp"
-        android:fontFamily="@font/dungeon_depths"
-        android:text="@string/textoUsuario"
-        android:textColor="#222034"
-        android:textSize="8sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.141"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.525" />
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="105dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/dungeon_depths"
+            android:text="@string/textoContraseña"
+            android:textColor="#222034"
+            android:textSize="8sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.147"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.617" />
 
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="319dp"
-        android:layout_height="20dp"
-        android:background="#222034"
-        android:ems="10"
-        android:inputType="textPassword"
-        android:textSize="8sp"
-        android:fontFamily="@font/dungeon_depths"
-        android:textColor="@color/fondo_fields"
-        android:paddingLeft="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.652" />
+        <EditText
+            android:paddingBottom="1dp"
+            android:id="@+id/editTextPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="#222034"
+            android:ems="10"
+            android:inputType="textPassword"
+            android:paddingLeft="8dp"
+            android:textColor="@color/fondo_fields"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.489"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.652" />
+
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textRegister"
@@ -108,10 +116,10 @@
         android:textSize="20px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.903"
+        app:layout_constraintHorizontal_bias="0.885"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.759" />
+        app:layout_constraintTop_toBottomOf="@+id/estadisticasLayout"
+        app:layout_constraintVertical_bias="0.107" />
 
     <ImageButton
         android:id="@+id/botonLoginContinuar"
@@ -122,7 +130,7 @@
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.827"
+        app:layout_constraintHorizontal_bias="0.842"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.917"
@@ -136,13 +144,12 @@
         android:background="@null"
         android:scaleType="fitCenter"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.168"
+        app:layout_constraintEnd_toStartOf="@+id/botonLoginContinuar"
+        app:layout_constraintHorizontal_bias="0.543"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.917"
         app:srcCompat="@drawable/boton_atras_selector" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

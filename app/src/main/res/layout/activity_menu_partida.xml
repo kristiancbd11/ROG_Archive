@@ -6,20 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/rog_fondo_pantalla_jugador"
-    tools:context=".MenuPartidaActivity">
+    tools:context=".vistasdepartida.MenuPartidaActivity">
 
-    <ImageView
-        android:id="@+id/imageViewAtras"
-        android:layout_width="45dp"
-        android:layout_height="48dp"
-        android:contentDescription="@string/desc_logo"
+    <TextView
+        android:id="@+id/nombrePartida"
+        android:layout_marginHorizontal="50dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:background="@drawable/estilo_azul"
+        android:gravity="center"
+        android:padding="3dp"
+        android:textColor="@color/fondo"
+        android:fontFamily="@font/dungeon_depths"
+        android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.904"
+        app:layout_constraintHorizontal_bias="0.096"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.951"
-        app:srcCompat="@drawable/atras" />
+        app:layout_constraintVertical_bias="0.051" />
 
     <ImageView
         android:id="@+id/hoguera"
